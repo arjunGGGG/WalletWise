@@ -15,7 +15,7 @@ MonoBehaviour:
   assetVersion: 2
   m_TextWrappingMode: 1
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   m_enableTintAllSprites: 0
   m_enableParseEscapeCharacters: 1
@@ -40,7 +40,11 @@ MonoBehaviour:
   m_defaultSpriteAssetPath: Sprite Assets/
   m_enableEmojiSupport: 1
   m_MissingCharacterSpriteUnicode: 0
-  m_EmojiFallbackTextAssets: []
+  m_EmojiFallbackTextAssets:
+  - {fileID: 11400000, guid: 9e0d60235448964469dd1ce64b126472, type: 2}
+  - {fileID: 11400000, guid: 86a533e9115328e4a8e96239f785acf1, type: 2}
+  - {fileID: 11400000, guid: 0ed151751c0d2424ba471e459c28280f, type: 2}
+  - {fileID: 11400000, guid: b29b99ff77089704b821f834cda861e7, type: 2}
   m_defaultColorGradientPresetsPath: Color Gradient Presets/
   m_defaultStyleSheet: {fileID: 11400000, guid: f952c082cb03451daed3ee968ac6c63e, type: 2}
   m_StyleSheetsResourcePath: 

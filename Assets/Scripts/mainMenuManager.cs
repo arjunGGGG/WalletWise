@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class mainMenuManager : MonoBehaviour
 {
-    // Method to be called when the button is clicked
     public void LoadHomeScene()
     {
         SceneManager.LoadScene("Home");

@@ -10,11 +10,11 @@ public class AssetListManager : MonoBehaviour
 {
     public GameObject formPanel;
     public TMP_InputField assetNameInput;
-    public TMP_InputField assetPriceInput; // Price entered by the user
+    public TMP_InputField assetPriceInput;
     public TMP_InputField assetQuantityInput;
     public Button submitButton;
     public Button cancelButton;
-    public Button refreshButton; // Button to manually refresh prices
+    public Button refreshButton;
 
     public GameObject assetPrefab;
     public Transform contentParent;
@@ -26,9 +26,9 @@ public class AssetListManager : MonoBehaviour
     {
         submitButton.onClick.AddListener(OnSubmit);
         cancelButton.onClick.AddListener(OnCancel);
-        refreshButton.onClick.AddListener(UpdateAssetPrices); // Refresh prices on button click
+        refreshButton.onClick.AddListener(UpdateAssetPrices);
 
-        LoadAssetsFromPrefs(); // Load saved assets when the script starts
+        LoadAssetsFromPrefs();
     }
 
     public void OnSubmit()
