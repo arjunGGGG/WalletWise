@@ -3,12 +3,11 @@
 **WalletWise** is a personal finance management platform designed to help users make smarter financial decisions regarding spending and investments. Featuring real-time financial analysis, investment recommendations, and an AI-powered chatbot, WalletWise empowers users to take control of their finances.
 
 ## Table of Contents
-- Features
-- System Requirements
-- Installation
-- Usage
-- Contributing
-- License
+- [Features](#features)
+- [System Requirements](#system-requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
 
 ## Features
@@ -35,10 +34,11 @@ git clone https://github.com/arjunGGGG/WalletWise.git
 - Unity will automatically download dependencies required for the project.
 
 3. **Run ARIA Locally**
-Ensure Ollama is installed on your machine. Start the ARIA model locally:
+Ensure [Ollama]{https://ollama.com/download} is installed on your machine. Start the ARIA model locally:
 
 ```
 ollama run arjungupta/aria:27b
+ollama serve
 ```
 
 ## Usage
