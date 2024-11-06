@@ -47,5 +47,5 @@ ollama run arjungupta/aria:27b
 - Use the AI Chatbot: Ask questions about finances, spending, or investments. The chatbot uses the ARIA model to provide personalized responses.
 
 
-##License
+## License
 > This project is licensed under the MIT License.
