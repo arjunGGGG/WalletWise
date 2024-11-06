@@ -5,7 +5,7 @@ public class subMenuManager : MonoBehaviour
 {
     public void LoadStocksScene()
     {
-        SceneManager.LoadScene("Stocks");
+        SceneManager.LoadScene("Stock");
     }
     public void LoadMFScene()
     {

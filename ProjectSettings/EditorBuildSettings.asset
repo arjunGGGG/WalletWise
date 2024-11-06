@@ -19,17 +19,18 @@ EditorBuildSettings:
     guid: 1df78f8f1ea807b48a6465c221a0e1f1
   - enabled: 1
     path: Assets/Scenes/Holdings/Gold.unity
-    guid: 7f56d71be4cdf7044a3e8a3da1257aef
+    guid: bc50ff06c4530d34aab5f7956a0bd3e6
   - enabled: 1
     path: Assets/Scenes/Holdings/Land.unity
-    guid: e2f7f1b051654644ca2f0980f1439624
+    guid: c7f516d87f3ed264885d29911f7b127a
   - enabled: 1
     path: Assets/Scenes/Holdings/MF.unity
-    guid: f9c06b31539373a4b88ff4fd2606c856
+    guid: a010a0d68d7589245b53d08b411df411
   - enabled: 1
-    path: Assets/Scenes/Holdings/Stocks.unity
-    guid: 84f0be9816cd6ed40a8c99b7de64f3c3
+    path: Assets/Scenes/Holdings/Stock.unity
+    guid: 06e239a1a2157214c8e51e9355ca37ea
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 2043bce7662b0db42a49094a5b09e78e, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 5ec51c6742adbef4f87bbf214bea1ff6, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 8e37c53333a32da45a54b6b05764fd6e, type: 2}
   m_UseUCBPForAssetBundles: 0

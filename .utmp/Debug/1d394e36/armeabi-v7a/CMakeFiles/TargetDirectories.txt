@@ -1,0 +1,5 @@
+G:/UnityProjects/WalletWise/.utmp/Debug/1d394e36/armeabi-v7a/CMakeFiles/edit_cache.dir
+G:/UnityProjects/WalletWise/.utmp/Debug/1d394e36/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+G:/UnityProjects/WalletWise/.utmp/Debug/1d394e36/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+G:/UnityProjects/WalletWise/.utmp/Debug/1d394e36/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+G:/UnityProjects/WalletWise/.utmp/Debug/1d394e36/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
