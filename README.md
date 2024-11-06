@@ -34,7 +34,7 @@ git clone https://github.com/arjunGGGG/WalletWise.git
 - Unity will automatically download dependencies required for the project.
 
 3. **Run ARIA Locally**
-Ensure [Ollama]{https://ollama.com/download} is installed on your machine. Start the ARIA model locally:
+Ensure [Ollama](https://ollama.com/) is installed on your machine. Start the ARIA model locally:
 
 ```
 ollama run arjungupta/aria:27b
