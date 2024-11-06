@@ -1,42 +1,51 @@
 # WalletWise
-## WalletWise is a personal finance management app designed to help users make informed financial decisions. It offers real-time insights, investment recommendations, and an AI-powered chatbot for financial advice.
+
+**WalletWise** is a personal finance management platform designed to help users make smarter financial decisions regarding spending and investments. Featuring real-time financial analysis, investment recommendations, and an AI-powered chatbot, WalletWise empowers users to take control of their finances.
+
+## Table of Contents
+- Features
+- System Requirements
+- Installation
+- Usage
+- Contributing
+- License
+
 
 ## Features
-### Financial Dashboard:
-Track income, expenses, and investments.
-### AI Chatbot:
-Get financial advice with ARIA, powered by local AI.
-Cross-Platform Support: Build for mobile, web, and desktop via Unity.
-System Requirements
-**Unity**: 6
-**Ollama**: For running the ARIA chatbot model locally
+- Financial Dashboard: Track your income, expenses, investments, and overall financial health.
+- Real-Time Financial Analysis: Get insights into your spending patterns and receive tailored investment recommendations.
+- AI-Powered Chatbot: ARIA, the AI chatbot, provides personalized advice based on user data and responds to financial queries.
+
+## System Requirements
+**Unity:** Version 6.0 LTS
+**Ollama:** For running the ARIA chatbot model locally
+
 
 ## Installation
-### Clone the Repo:
+1. **Clone the Repository**
+To get started with WalletWise, clone the repository:
 
 ```
 git clone https://github.com/arjunGGGG/WalletWise.git
-cd WalletWise
 ```
-Open in Unity:
-Open Unity Hub, select Open Project, and navigate to the WalletWise folder.
 
-## Run ARIA Model:
-Start ARIA locally with Ollama:
+2. **Open the Project in Unity**
+- Open Unity Hub.
+- Select Open Project and navigate to the cloned WalletWise folder.
+- Unity will automatically download dependencies required for the project.
+
+3. **Run ARIA Locally**
+Ensure Ollama is installed on your machine. Start the ARIA model locally:
 
 ```
 ollama run arjungupta/aria:27b
 ```
 
 ## Usage
-### Dashboard: View financial data.
-### Chatbot: Ask financial questions to ARIA.
-### Options: Set API endpoint IP and port in the chatbot options screen.
-Usage
-Dashboard: View financial data.
-Chatbot: Ask financial questions to ARIA.
-Options: Set API endpoint IP and port in the chatbot options screen.
-Project Structure
-Assets/Scenes: Main scenes for WalletWise.
-Assets/Scripts: Key scripts include Chat.cs (Chatbot) and OptionsManager.cs (API settings).
+- Launch WalletWise: Open the project in Unity and select Play in the editor, or build it for your target platform.
+- Interact with the Financial Dashboard: View and track your financial details.
+- Use the AI Chatbot: Ask questions about finances, spending, or investments. The chatbot uses the ARIA model to provide personalized responses.
 
+
+##License
+> This project is licensed under the MIT License.
