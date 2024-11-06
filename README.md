@@ -16,8 +16,8 @@
 - AI-Powered Chatbot: ARIA, the AI chatbot, provides personalized advice based on user data and responds to financial queries.
 
 ## System Requirements
-**Unity:** Version 6.0 LTS
-**Ollama:** For running the ARIA chatbot model locally
+- **Unity:** Version 6.0 LTS
+- **Ollama:** For running the ARIA chatbot model locally
 
 
 ## Installation
