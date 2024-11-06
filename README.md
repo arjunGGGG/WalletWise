@@ -1,28 +1,32 @@
-WalletWise
-WalletWise is a personal finance management app designed to help users make informed financial decisions. It offers real-time insights, investment recommendations, and an AI-powered chatbot for financial advice.
+#WalletWise
+##WalletWise is a personal finance management app designed to help users make informed financial decisions. It offers real-time insights, investment recommendations, and an AI-powered chatbot for financial advice.
 
-Features
-Financial Dashboard: Track income, expenses, and investments.
-AI Chatbot: Get financial advice with ARIA, powered by local AI.
+##Features
+###Financial Dashboard:
+Track income, expenses, and investments.
+###AI Chatbot:
+Get financial advice with ARIA, powered by local AI.
 Cross-Platform Support: Build for mobile, web, and desktop via Unity.
 System Requirements
-Unity: 2021.3 or later
-Ollama: For running the ARIA chatbot model locally
-Installation
-Clone the Repo:
+**Unity**: 6
+**Ollama**: For running the ARIA chatbot model locally
 
-bash
-Copy code
+##Installation
+###Clone the Repo:
+
+```
 git clone https://github.com/arjunGGGG/WalletWise.git
 cd WalletWise
+```
 Open in Unity:
 Open Unity Hub, select Open Project, and navigate to the WalletWise folder.
 
-Run ARIA Model: Start ARIA locally with Ollama:
+##Run ARIA Model: Start ARIA locally with Ollama:
 
-bash
-Copy code
+```
 ollama run arjungupta/aria:27b
+```
+
 Usage
 Dashboard: View financial data.
 Chatbot: Ask financial questions to ARIA.
