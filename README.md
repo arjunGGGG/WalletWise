@@ -1,6 +1,6 @@
 # WalletWise
 
-**WalletWise** is a personal finance management platform designed to help users make smarter financial decisions regarding spending and investments. Featuring real-time financial analysis, investment recommendations, and an AI-powered chatbot, WalletWise empowers users to take control of their finances.
+**Wallet Wise** is a tool for managing personal finances that aims to give users the ability to make informed decisions about buying and investing. Wallet Wise is accessible as both a mobile application and a browser extension. It utilizes information from multiple sources like income, credit cards, & investments to offer personalized financial guidance. The app analyzes the user's financial well-being and spending habits before they buy something, providing suggestions on the financial feasibility of the expense. Furthermore, it offers investment guidance, including information on stocks and mutual funds. It utilizes user-specific financial information, it will offer tailored responses to financial questions through a chatbot, promoting improved financial sense. This device is created to allow the user to spend wisely, decrease spontaneous purchases, and steer users towards long-term finance planning.
 
 ## Table of Contents
 - [Features](#features)
