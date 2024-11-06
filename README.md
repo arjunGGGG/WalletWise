@@ -11,9 +11,9 @@
 
 
 ## Features
-- Financial Dashboard: Track your income, expenses, investments, and overall financial health.
-- Real-Time Financial Analysis: Get insights into your spending patterns and receive tailored investment recommendations.
-- AI-Powered Chatbot: ARIA, the AI chatbot, provides personalized advice based on user data and responds to financial queries.
+- **Financial Dashboard:** Track your income, expenses, investments, and overall financial health.
+- **Real-Time Financial Analysis:** Get insights into your spending patterns and receive tailored investment recommendations.
+- **AI-Powered Chatbot:** ARIA, the AI chatbot, provides personalized advice based on user data and responds to financial queries.
 
 ## System Requirements
 - **Unity:** Version 6.0 LTS
