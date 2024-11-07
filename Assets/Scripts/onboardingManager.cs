@@ -30,7 +30,7 @@ public class OnboardingManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         if (PlayerPrefs.HasKey("HasCompletedOnboarding") && PlayerPrefs.GetInt("HasCompletedOnboarding") == 1)
         {
