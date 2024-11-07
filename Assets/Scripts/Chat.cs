@@ -10,15 +10,18 @@ using TMPro;
 
 public class Chat : MonoBehaviour
 {
-    public TMP_Text chatContent; // displays chat messages
-    public TMP_InputField chatInput; // input field for user text
-    public ScrollRect scrollRect; // for scrolling the chat content
+    public TMP_Text chatContent; // Optional, can be used for debugging
+    public TMP_InputField chatInput; // Input field for user text
+    public ScrollRect scrollRect; // For scrolling the chat content
+    public Transform chatContentPanel; // The container to hold chat bubbles
 
-    public string ipAddress = "127.0.0.1"; // default ip address
-    public string port = "11434"; // default port
-    private string apiUrl; // chat api endpoint
-    private string chatLog = ""; // logs the chat conversation
-    private List<JObject> messages = new List<JObject>(); // conversation history
+    public GameObject userBubblePrefab; // Prefab for user chat bubble
+    public GameObject botBubblePrefab; // Prefab for bot chat bubble
+
+    public string ipAddress = "127.0.0.1"; // Default ip address
+    public string port = "11434"; // Default port
+    private string apiUrl; // Chat API endpoint
+    private List<JObject> messages = new List<JObject>(); // Conversation history
 
     void Start()
     {
@@ -34,7 +37,7 @@ public class Chat : MonoBehaviour
     public void UpdateApiUrl()
     {
         apiUrl = $"http://{ipAddress}:{port}/api/chat";
-        Debug.Log("updated api url: " + apiUrl);
+        Debug.Log("Updated API URL: " + apiUrl);
     }
 
     private void SendUserDataToAPI()
@@ -47,15 +50,9 @@ public class Chat : MonoBehaviour
         string employmentSector = PlayerPrefs.GetString("UserEmploymentSector", "Not Specified");
 
         string userDataMessage = string.Format(
-            "user's name: {0}, age: {1}, gender: {2}, marital status: {3}, annual income: {4} LPA, employment sector: {5}. " +
-            "this is the user data which is for your info only. now remember this and now greet the user in under 30 words. " +
-            "don't mention these facts to user. they are just for your context.",
-            userName,
-            userAge,
-            userGender,
-            userMaritalStatus,
-            userIncome,
-            employmentSector
+            "User's name: {0}, age: {1}, gender: {2}, marital status: {3}, annual income: {4} LPA, employment sector: {5}. " +
+            "This is the user data, for your info only. Greet the user in under 30 words, but don’t mention these facts.",
+            userName, userAge, userGender, userMaritalStatus, userIncome, employmentSector
         );
 
         messages.Add(new JObject
@@ -72,7 +69,7 @@ public class Chat : MonoBehaviour
         if (!string.IsNullOrEmpty(chatInput.text))
         {
             string message = chatInput.text;
-            AppendToChatLog("\nYou: " + message);
+            AppendUserMessage(message);
 
             messages.Add(new JObject
             {
@@ -88,24 +85,33 @@ public class Chat : MonoBehaviour
         }
     }
 
-    private void AppendToChatLog(string message)
+    private void AppendUserMessage(string message)
     {
-        chatLog += message + "\n";
-        UpdateChatDisplay();
+        GameObject userBubble = Instantiate(userBubblePrefab, chatContentPanel);
+        TMP_Text userText = userBubble.GetComponentInChildren<TMP_Text>();
+        userText.text = message;
+        ScrollToLatestMessage();
     }
 
-    private void UpdateChatDisplay()
+    private void AppendBotMessage(string message)
     {
-        chatContent.text = chatLog;
+        GameObject botBubble = Instantiate(botBubblePrefab, chatContentPanel);
+        TMP_Text botText = botBubble.GetComponentInChildren<TMP_Text>();
+        botText.text = message;
+        ScrollToLatestMessage();
+    }
+
+    private void ScrollToLatestMessage()
+    {
         Canvas.ForceUpdateCanvases();
-        scrollRect.verticalNormalizedPosition = 0f;
+        scrollRect.verticalNormalizedPosition = 0f; // Scroll to the bottom
     }
 
     private IEnumerator SendApiRequest()
     {
         var jsonPayload = new JObject
         {
-            ["model"] = "arjungupta/aria:9b", // use your specific model
+            ["model"] = "arjungupta/aria:9b", // Use your specific model
             ["messages"] = new JArray(messages)
         };
 
@@ -124,12 +130,12 @@ public class Chat : MonoBehaviour
 
         if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError("api error: " + request.error);
+            Debug.LogError("API error: " + request.error);
         }
         else
         {
             string rawResponse = request.downloadHandler.text;
-            Debug.Log("raw response: " + rawResponse);
+            Debug.Log("Raw response: " + rawResponse);
 
             string currentBotResponse = "";
 
@@ -146,14 +152,14 @@ public class Chat : MonoBehaviour
 
                     if (isDone)
                     {
-                        AppendToChatLog("\nBot: " + currentBotResponse.Trim());
+                        AppendBotMessage(currentBotResponse.Trim());
                         messages.Add(new JObject { ["role"] = "assistant", ["content"] = currentBotResponse.Trim() });
                         currentBotResponse = "";
                     }
                 }
                 catch (JsonReaderException ex)
                 {
-                    Debug.LogError("json parsing error: " + ex.Message);
+                    Debug.LogError("JSON parsing error: " + ex.Message);
                 }
             }
         }
