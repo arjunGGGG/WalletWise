@@ -1,5 +1,0 @@
-# This directory is a Syncthing folder marker.
-# Do not delete.
-
-folderID: jh7qp-rlohp
-created: 2024-10-17T23:29:05+05:30
