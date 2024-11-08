@@ -35,10 +35,11 @@ git clone https://github.com/arjunGGGG/WalletWise.git
 
 3. **Run ARIA Locally**
 Ensure [Ollama](https://ollama.com/) is installed on your machine. Start the ARIA model locally:
+
 [ARIA](https://ollama.com/arjungupta/aria)
 
 ```
-ollama run arjungupta/aria:27b
+ollama run arjungupta/aria:9b
 ollama serve
 ```
 
