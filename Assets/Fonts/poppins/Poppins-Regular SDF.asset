@@ -135,24 +135,24 @@ MonoBehaviour:
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 11400000, guid: a5645e493607c2040a05916240d3ffc3, type: 2}
-    italicTypeface: {fileID: 11400000, guid: 411af014a3a378d4895cefaa79f642e0, type: 2}
-  - regularTypeface: {fileID: 11400000, guid: 5aa65dbd47f5595418c0174cf7b15f30, type: 2}
-    italicTypeface: {fileID: 11400000, guid: aa27af06a6b91da4389963cb3b1251bd, type: 2}
-  - regularTypeface: {fileID: 11400000, guid: 6ef8883aac0a5c449b8b770d4c153277, type: 2}
-    italicTypeface: {fileID: 11400000, guid: 3882a9cc0ddbc7a488f0fee071bad59f, type: 2}
   - regularTypeface: {fileID: 0}
-    italicTypeface: {fileID: 11400000, guid: af5cf53107dffb44e8a1a88f0d24d2b8, type: 2}
-  - regularTypeface: {fileID: 11400000, guid: 84f600dd1a0a8454d8ef131c1b224306, type: 2}
-    italicTypeface: {fileID: 11400000, guid: 27b222e5abc33fb49934e2a4e11d1659, type: 2}
-  - regularTypeface: {fileID: 11400000, guid: 3024a187799f1f04983da614ca5d513a, type: 2}
-    italicTypeface: {fileID: 11400000, guid: b82a733d626db80479211013056ff83e, type: 2}
-  - regularTypeface: {fileID: 11400000, guid: 5b99c5ff16d5ba04b858ee4e6c6ead5e, type: 2}
-    italicTypeface: {fileID: 11400000, guid: 6224d336bb8a38442b2525683359a60b, type: 2}
-  - regularTypeface: {fileID: 11400000, guid: 7f90f5ff6a0902c4aaf3b7eef68d22ef, type: 2}
-    italicTypeface: {fileID: 11400000, guid: a3927fe3225c32f4797db3e962751394, type: 2}
-  - regularTypeface: {fileID: 11400000, guid: 310f8e8ee7800d14b8a13c0fcc00e62e, type: 2}
-    italicTypeface: {fileID: 11400000, guid: 0b8bfb397f244d845bf8a898b7abc23b, type: 2}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
+  - regularTypeface: {fileID: 0}
+    italicTypeface: {fileID: 0}
   fontWeights: []
   normalStyle: 0
   normalSpacingOffset: 0

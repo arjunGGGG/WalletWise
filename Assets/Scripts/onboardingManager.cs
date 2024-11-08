@@ -3,34 +3,24 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class OnboardingManager : MonoBehaviour
+public class onboardingManager : MonoBehaviour
 {
-    // Intro screen elements
-    public GameObject introPanel;
-    public Button startOnboardingButton;
-
     // Personal data elements
     public TMP_InputField nameInput;
     public TMP_InputField ageInput;
     public TMP_Dropdown genderDropdown;
     public TMP_Dropdown maritalStatusDropdown;
-    public Button personalSubmitButton;
-
-    // Financial data elements
     public TMP_InputField incomeInput;
     public TMP_Dropdown employmentSectorDropdown;
-    public Button financialSubmitButton;
-
-    public Button letsGoButton;
 
     // Panels for onboarding
-    public GameObject personalDataPanel;
-    public GameObject financialDataPanel;
-    public GameObject letsGoPanel;
+    public GameObject introPanel;
+    public GameObject userDataPanel;
 
     private void Start()
     {
-        //PlayerPrefs.DeleteAll();
+        introPanel.SetActive(false);
+        userDataPanel.SetActive(false);
 
         if (PlayerPrefs.HasKey("HasCompletedOnboarding") && PlayerPrefs.GetInt("HasCompletedOnboarding") == 1)
         {
@@ -38,27 +28,13 @@ public class OnboardingManager : MonoBehaviour
             return;
         }
 
-        // Show intro panel initially and hide other panels
+        // Show intro panel initially
         introPanel.SetActive(true);
-        personalDataPanel.SetActive(false);
-        financialDataPanel.SetActive(false);
-        letsGoPanel.SetActive(false);
+        userDataPanel.SetActive(false);
 
-        // Add listeners for buttons
-        startOnboardingButton.onClick.AddListener(StartOnboarding);
-        personalSubmitButton.onClick.AddListener(SubmitPersonalData);
-        financialSubmitButton.onClick.AddListener(SubmitFinancialData);
-        letsGoButton.onClick.AddListener(OnLetsGoPressed);
-
-        LoadPersonalData();
-        LoadFinancialData();
+        LoadData();
     }
 
-    private void StartOnboarding()
-    {
-        introPanel.SetActive(false);
-        personalDataPanel.SetActive(true);
-    }
 
     private void SubmitPersonalData()
     {
@@ -66,36 +42,35 @@ public class OnboardingManager : MonoBehaviour
         int userAge = int.Parse(ageInput.text);
         string userGender = genderDropdown.options[genderDropdown.value].text;
         string userMaritalStatus = maritalStatusDropdown.options[maritalStatusDropdown.value].text;
+        float userIncome = float.Parse(incomeInput.text);
+        string userEmploymentSector = employmentSectorDropdown.options[employmentSectorDropdown.value].text;
 
         PlayerPrefs.SetString("UserName", userName);
         PlayerPrefs.SetInt("UserAge", userAge);
         PlayerPrefs.SetString("UserGender", userGender);
         PlayerPrefs.SetString("UserMaritalStatus", userMaritalStatus);
-
-        personalDataPanel.SetActive(false);
-        financialDataPanel.SetActive(true);
-    }
-
-    private void SubmitFinancialData()
-    {
-        float userIncome = float.Parse(incomeInput.text);
-        string userEmploymentSector = employmentSectorDropdown.options[employmentSectorDropdown.value].text;
-
         PlayerPrefs.SetFloat("UserIncome", userIncome);
         PlayerPrefs.SetString("UserEmploymentSector", userEmploymentSector);
 
-        financialDataPanel.SetActive(false);
-        letsGoPanel.SetActive(true);
+        introPanel.SetActive(false);
+        userDataPanel.SetActive(false);
     }
 
-    private void OnLetsGoPressed()
+    public void OnGoPressed()
     {
+        introPanel.SetActive(false);
+        userDataPanel.SetActive(true);
+    }
+
+    public void OnSubmitPressed()
+    {
+        SubmitPersonalData();
         PlayerPrefs.SetInt("HasCompletedOnboarding", 1);
         PlayerPrefs.Save();
         LoadMainApp();
     }
 
-    private void LoadPersonalData()
+    private void LoadData()
     {
         if (PlayerPrefs.HasKey("UserName"))
         {
@@ -103,13 +78,6 @@ public class OnboardingManager : MonoBehaviour
             ageInput.text = PlayerPrefs.GetInt("UserAge").ToString();
             genderDropdown.value = genderDropdown.options.FindIndex(option => option.text == PlayerPrefs.GetString("UserGender"));
             maritalStatusDropdown.value = maritalStatusDropdown.options.FindIndex(option => option.text == PlayerPrefs.GetString("UserMaritalStatus"));
-        }
-    }
-
-    private void LoadFinancialData()
-    {
-        if (PlayerPrefs.HasKey("UserIncome"))
-        {
             incomeInput.text = PlayerPrefs.GetFloat("UserIncome").ToString();
             employmentSectorDropdown.value = employmentSectorDropdown.options.FindIndex(option => option.text == PlayerPrefs.GetString("UserEmploymentSector"));
         }
@@ -118,10 +86,5 @@ public class OnboardingManager : MonoBehaviour
     private void LoadMainApp()
     {
         SceneManager.LoadScene("Home");
-    }
-
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.Save();
     }
 }
