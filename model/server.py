@@ -6,18 +6,15 @@ app = Flask(__name__)
 @app.route('/get_value', methods=['POST'])
 def get_value():
     try:
-        # Get the index from request
         data = request.get_json()
         if not data or 'index' not in data:
             return jsonify({'error': 'No index provided'}), 400
         
         index = int(data['index'])
         
-        # Read the CSV file
         df = pd.read_csv('model/submission.csv')
         
-        # Get the value from the third column at the specified index
-        value = float(df.iloc[index, 2])  # 2 represents the third column (0-based indexing)
+        value = float(df.iloc[index, 2])
         
         return jsonify({'value': value})
     
