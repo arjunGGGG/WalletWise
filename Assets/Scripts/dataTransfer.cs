@@ -14,6 +14,8 @@ public class dataTransfer : MonoBehaviour
     public TMP_Text productPriceText;
     public GameObject popUp;
     public Image progressBar;
+    public bool isAffordable=false;
+    public TMP_Text confirmText;
 
     private Dictionary<string, float> productData = new Dictionary<string, float>();
 
@@ -86,42 +88,58 @@ public class dataTransfer : MonoBehaviour
 
     public void onSubmitPressed()
     {
+        popUp.SetActive(true);
         string selectedProduct = productDropdown.options[productDropdown.value].text;
         StartCoroutine(SendProductRequest(selectedProduct));
     }
 
     IEnumerator SendProductRequest(string selectedProduct)
     {
-        Dictionary<string, string> requestData = new Dictionary<string, string>()
-        {
-            { "productName", selectedProduct }
-        };
+        var requestData = new { index = 1 };
         string jsonData = JsonConvert.SerializeObject(requestData);
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(jsonData);
 
-        using (UnityWebRequest request = new UnityWebRequest(productPriceEndpoint, "POST"))
+        string productPriceEndpointWithPath = "http://localhost:11436/get_value";
+
+        using (UnityWebRequest request = new UnityWebRequest(productPriceEndpointWithPath, "POST"))
         {
             request.uploadHandler = new UploadHandlerRaw(jsonToSend);
+
             request.downloadHandler = new DownloadHandlerBuffer();
+
             request.SetRequestHeader("Content-Type", "application/json");
 
             yield return request.SendWebRequest();
 
             if (request.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError(request.error);
+                Debug.LogError("Request failed: " + request.error);
             }
             else
             {
                 string jsonResponse = request.downloadHandler.text;
-                float productPrice = JsonConvert.DeserializeObject<float>(jsonResponse);
-                productPriceText.text = $"Price: {productPrice}";
-                UpdateProgressBar(productPrice);
+                var response = JsonConvert.DeserializeObject<Dictionary<string, float>>(jsonResponse);
+                isAffordable = response.ContainsKey("value") && response["value"] != 0f;
+
+                if (isAffordable)
+                {
+                    confirmText.text = "YES";
+                    confirmText.color = Color.green;
+                }
+                else
+                {
+                    confirmText.text = "NO";
+                    confirmText.color = Color.red;
+                }
+
+                //float conf = JsonConvert.DeserializeObject<float>(jsonResponse);
+                //UpdateProgressBar(conf);
             }
         }
     }
 
-    void UpdateProgressBar(float price)
+
+void UpdateProgressBar(float price)
     {
         float maxPrice = 100000f;
         float fillAmount = Mathf.Clamp01(price / maxPrice);

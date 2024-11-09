@@ -119,6 +119,7 @@ public class AssetListManager : MonoBehaviour
         TextMeshProUGUI quantityText = newAssetPanel.transform.Find("quantityText")?.GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI priceText = newAssetPanel.transform.Find("priceText")?.GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI profitText = newAssetPanel.transform.Find("profitText")?.GetComponent<TextMeshProUGUI>();
+        Image arrowImage = newAssetPanel.transform.Find("arrow")?.GetComponent<Image>();
 
         if (nameText == null || quantityText == null || priceText == null)
         {
@@ -133,19 +134,23 @@ public class AssetListManager : MonoBehaviour
         if (stockMode)
         {
             float profitPercentage = ((asset.currentPrice - asset.assetPrice) / asset.assetPrice) * 100;
-            profitText.text = "Profit: " + profitPercentage.ToString("F2") + "%";
+            profitText.text = profitPercentage.ToString("F2") + "%";
 
             if (profitPercentage < -5f)
             {
                 profitText.color = Color.red;
+                arrowImage.color = Color.red;
+                arrowImage.transform.rotation = Quaternion.Euler(0, 0, 180);
             }
             else if (profitPercentage > 5f)
             {
                 profitText.color = Color.green;
+                arrowImage.color = Color.green;
             }
             else
             {
                 profitText.color = Color.black;
+                arrowImage.gameObject.SetActive(true);
             }
         }
     }

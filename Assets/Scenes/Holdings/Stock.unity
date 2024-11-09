@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 4116174817133359255, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
       propertyPath: assetPrefab
       value: 
-      objectReference: {fileID: 4742308006183735780, guid: 49687337ddddae14fb2b75dc5b03fd3d, type: 3}
+      objectReference: {fileID: 1446706981365889680, guid: 063ae2a52ed7be243ac7b63403defd85, type: 3}
     - target: {fileID: 4116174817133359255, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
       propertyPath: assetListName
       value: StockList
@@ -233,7 +233,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5349408264509881921, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -0.000091552734
+      objectReference: {fileID: 0}
+    - target: {fileID: 5353343305036916869, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153609127488748251, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153609127488748251, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153609127488748251, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153609127488748251, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_Color.r
+      value: 0.45882353
       objectReference: {fileID: 0}
     - target: {fileID: 6220717643903934383, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
       propertyPath: m_AnchorMax.x
@@ -259,9 +279,37 @@ PrefabInstance:
       propertyPath: m_text
       value: Stocks
       objectReference: {fileID: 0}
+    - target: {fileID: 6571354666374199495, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_fontSize
+      value: 38.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571354666374199495, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e9599982a35524479e7b2e9bfc013c8, type: 2}
+    - target: {fileID: 6571354666374199495, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571354666374199495, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1697296122323738106, guid: 1e9599982a35524479e7b2e9bfc013c8, type: 2}
+    - target: {fileID: 6571354666374199495, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6674287290415266257, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
       propertyPath: m_Name
       value: AssetScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361449851863180863, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361449851863180863, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7611824137230524664, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
       propertyPath: m_LocalPosition.x
@@ -301,6 +349,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611824137230524664, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8232137654517201067, guid: b2246b1bd6b0f8a4cad7ada8d964ff72, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
